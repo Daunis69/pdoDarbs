@@ -1,16 +1,19 @@
 <?php
 
-$dsn = "mysql:host=localhost;port=3306;user=root;password=;dbname=blog;charset=utf8mb4";
-$pdo = new PDO($dsn);
-var_dump($pdo);
-
-$statement = $pdo ->prepare ("SELECT * FROM posts");
-$statement ->execute();
-$posts = $statement->fetchAll(PDO::FETCH_ASSOC); 
+require_once "functions.php";
+require_once "Database.php";
+$config = require "config.php";
 
 
+$db = new Database($config["database"]);
+$posts = $db->query("SELECT * FROM posts");
+echo "<h1> Blogs </h1>";
+echo "<form>";
+    echo "<input name='search_query' />";
+    echo "<button>Meklēt</button>";
+echo "</form>";
 echo "<ul>";
-    
-foreach ($posts as $post) {echo "<li>" . $post ["content"] . "</li>";
- }
+    foreach($posts as $post) {
+        echo "<li>" . $post["content"] . "</li>";
+    }
 echo "</ul>";
