@@ -12,5 +12,15 @@
 <button>Meklēt</button>
 </form>
 <ul>
+<?php if (count($categories) == 0) { ?>
+    <p>❌ Nav atraststa neviena kategorija. 😭 Lūdzu, pamēģini citu kategoriju. 🐣</p>
+        <?php } else { ?>
+            <ul>
+       <? foreach($categories as $category) {
+    echo "<li>" . $category["category_name"] . "</li>";
+    }
+    ?>
+</ul>
+ <?php } ?>
 </body>
 </html>
