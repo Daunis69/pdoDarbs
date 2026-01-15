@@ -3,7 +3,7 @@
 require_once "functions.php";
 require_once "Database.php";
 $config = require "config.php";
-
+$customStyles = "story.css";
 
 $db = new Database($config["database"]);
 $sql_query = "SELECT * FROM posts";

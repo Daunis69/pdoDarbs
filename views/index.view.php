@@ -1,32 +1,20 @@
-<!DOCTYPE html>
-<html lang="lv">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emuārs</title>
-    
-</head>
-<body>
-   
-     <h1> Blogs </h1>
- <form method='get'>
- <input name='search_query' value='<?= $_GET["search_query"] ?? "" ?>' />
- <button>Meklēt</button>
- </form>
+<?php ob_start(); ?>
 
-<?php foreach($posts as $post) { 
-    echo "<li>" . $post["content"] . "</li>";
-}
-echo "</ul>";
-?>
+<h1>Blogs</h1>
+<form method='get'>
+    <input name='search_query' value='<?= $_GET["search_query"] ?? "" ?>' />
+    <button>Meklēt</button>
+</form>
+
 <?php if (count($posts) == 0) { ?>
     <p>❌ Nav atrasts neviens ieraksts. 😭 Lūdzu, pamēģini citu vārdu vai frāzi 🐣</p>
-        <?php } else { ?>
-            <ul>
+<?php } else { ?>
+    <ul>
         <?php foreach($posts as $post) { ?>
-            <li> <?= $post["content"] ?> </li>
-    <?php } ?>
+            <li><?= $post["content"] ?></li>
+        <?php } ?>
     </ul>
- <?php } ?>
-</body>
-</html>
+<?php } ?>
+
+<?php $content = ob_get_clean(); ?>
+<?php require "./views/layout.php"; ?>
