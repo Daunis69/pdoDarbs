@@ -1,4 +1,5 @@
-<?php ob_start(); ?>
+<?php require "views/components/header.php"; ?>
+<?php require "views/components/navbar.php"; ?>
 
 <h1>Blogs</h1>
 <form method='get'>
@@ -11,10 +12,9 @@
 <?php } else { ?>
     <ul>
         <?php foreach($posts as $post) { ?>
-            <li><?= $post["content"] ?></li>
+            <li><a href="show?id=<?= $post["id"] ?>"> <?= $post["content"] ?></a></li>
         <?php } ?>
     </ul>
 <?php } ?>
 
-<?php $content = ob_get_clean(); ?>
-<?php require "./views/layout.php"; ?>
+<?php require "views/components/footer.php"; ?>
