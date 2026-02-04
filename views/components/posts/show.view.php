@@ -3,6 +3,14 @@
 
 <h1><?= htmlspecialchars($post["content"]) ?></h1>
 
-
+<a href="editt?id=<?= $post["id"] ?>"> Rediget ierakstu </a>
 
 <?php require "views/components/footer.php"; ?>
+
+<form action="/pdoDarbs/delete" method="POST">
+    <input type="hidden" name="id" value="<?= $post['id'] ?>">
+
+    <button type="submit">
+        Dzēst ierakstu
+    </button>
+</form>

@@ -3,19 +3,13 @@
 
 <h1>Izveidot jaunu ierakstu</h1>
 
-<?php if (isset($error)): ?>
-    <p style="color: red;"><?= htmlspecialchars($error) ?></p>
-<?php endif; ?>
-
 <form method="POST">
-    <label>Bloga nosaukums
-        <input name="title" value="<?= htmlspecialchars($_POST['title'] ?? '') ?>" required />
-    </label>
-    
     <label>Bloga teksts
-        <textarea name="content" required><?= htmlspecialchars($_POST['content'] ?? '') ?></textarea>
+        <input name="content" value="<?= htmlspecialchars($_POST['content'] ?? '')?>" >
     </label>
-    
+     <?php if(isset($errors["content"])) { ?>
+       <p><?= $errors["content"] ?></p>
+     <?php } ?>
     <button type="submit">Iesniegt</button>
 </form>
 
