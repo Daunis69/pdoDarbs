@@ -1,0 +1,300 @@
+/* Windows 7 Style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', 'MS Sans Serif', Arial, sans-serif;
+    font-size: 12px;
+    background: linear-gradient(180deg, #f0f0f0 0%, #e5e5e5 100%);
+    color: #1a1a1a;
+    line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    background: linear-gradient(180deg, #e3f2fd 0%, #bbdefb 100%);
+    border-bottom: 1px solid #90caf9;
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 12px 16px;
+    margin: 0;
+    color: #1565c0;
+}
+
+/* Navbar */
+nav {
+    background: linear-gradient(180deg, #f5f5f5 0%, #ebebeb 100%);
+    border-bottom: 1px solid #bdbdbd;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+nav a, nav button {
+    display: inline-block;
+    background: linear-gradient(180deg, #f5f5f5 0%, #ebebeb 100%);
+    border: 1px solid transparent;
+    border-right: 1px solid #bdbdbd;
+    padding: 8px 12px;
+    margin: 0;
+    text-decoration: none;
+    color: #1a1a1a;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+nav a:last-child, nav button:last-child {
+    border-right: none;
+}
+
+nav a:hover, nav button:hover {
+    background: linear-gradient(180deg, #efefef 0%, #e3e3e3 100%);
+    border: 1px solid #b4b4b4;
+    border-right: 1px solid #bdbdbd;
+}
+
+nav a:hover:last-child, nav button:hover:last-child {
+    border-right: 1px solid #b4b4b4;
+}
+
+nav a:active, nav button:active {
+    background: linear-gradient(180deg, #e0e0e0 0%, #d8d8d8 100%);
+    border: 1px solid #787878;
+}
+
+/* Main content */
+main {
+    flex: 1;
+    max-width: 1200px;
+    margin: 16px auto;
+    padding: 16px;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #d0d0d0;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    margin: 12px 0 8px 0;
+    color: #1a1a1a;
+}
+
+h1 {
+    font-size: 18px;
+    border-bottom: 2px solid #0078d4;
+    padding-bottom: 8px;
+}
+
+h2 {
+    font-size: 16px;
+}
+
+h3 {
+    font-size: 14px;
+}
+
+p {
+    margin: 8px 0;
+}
+
+/* Buttons */
+button, input[type="submit"], input[type="button"] {
+    background: linear-gradient(180deg, #f0f0f0 0%, #e0e0e0 100%);
+    color: #1a1a1a;
+    border: 1px solid #999;
+    padding: 6px 16px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    margin: 4px 4px 4px 0;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+}
+
+button:hover, input[type="submit"]:hover, input[type="button"]:hover {
+    background: linear-gradient(180deg, #f5f5f5 0%, #e5e5e5 100%);
+    border: 1px solid #666;
+}
+
+button:active, input[type="submit"]:active, input[type="button"]:active {
+    background: linear-gradient(180deg, #d0d0d0 0%, #c0c0c0 100%);
+    border: 1px solid #333;
+}
+
+button:focus, input[type="submit"]:focus, input[type="button"]:focus {
+    outline: 1px dotted #333;
+    outline-offset: -3px;
+}
+
+/* Form inputs */
+input[type="text"], input[type="password"], input[type="email"], input[type="number"], 
+textarea, select {
+    background-color: #fff;
+    color: #1a1a1a;
+    border: 1px solid #999;
+    padding: 6px 8px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 12px;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: border-color 0.2s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, 
+input[type="number"]:focus, textarea:focus, select:focus {
+    border: 1px solid #0078d4;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 120, 212, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+label {
+    display: block;
+    margin: 8px 0 4px 0;
+    font-size: 12px;
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border: 1px solid #d0d0d0;
+    margin: 12px 0;
+}
+
+table th {
+    background: linear-gradient(180deg, #f5f5f5 0%, #ebebeb 100%);
+    color: #1a1a1a;
+    border: 1px solid #d0d0d0;
+    padding: 8px;
+    font-weight: 600;
+    text-align: left;
+}
+
+table td {
+    border: 1px solid #e0e0e0;
+    padding: 8px;
+    background-color: #fff;
+}
+
+table tr:hover td {
+    background-color: #f0f8ff;
+}
+
+table tr:nth-child(even) td {
+    background-color: #f9f9f9;
+}
+
+table tr:nth-child(even):hover td {
+    background-color: #f0f8ff;
+}
+
+/* Links */
+a {
+    color: #0078d4;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #005a9e;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #5b4f94;
+}
+
+a:active {
+    color: #003366;
+}
+
+/* Form containers */
+form {
+    background-color: #fff;
+    padding: 12px;
+    margin: 12px 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+}
+
+/* Error/Warning messages */
+.errors, .error, [style*="color: red"] {
+    background-color: #fee;
+    border: 1px solid #ff6b6b;
+    border-left: 4px solid #d32f2f;
+    padding: 10px;
+    margin: 10px 0;
+    color: #c41c00;
+    border-radius: 2px;
+}
+
+.success {
+    background-color: #efe;
+    border: 1px solid #67c67a;
+    border-left: 4px solid #2e7d32;
+    padding: 10px;
+    margin: 10px 0;
+    color: #1b5e20;
+    border-radius: 2px;
+}
+
+/* Lists */
+ul, ol {
+    margin: 8px 0 8px 24px;
+}
+
+li {
+    margin: 4px 0;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(180deg, #f5f5f5 0%, #ebebeb 100%);
+    border-top: 1px solid #bdbdbd;
+    padding: 12px 16px;
+    margin-top: auto;
+    font-size: 11px;
+    text-align: center;
+    color: #666;
+}
+
+/* Container panels */
+.panel {
+    background-color: #fff;
+    border: 1px solid #d0d0d0;
+    border-radius: 2px;
+    padding: 12px;
+    margin: 12px 0;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}

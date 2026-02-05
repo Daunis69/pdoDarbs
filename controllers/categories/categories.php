@@ -16,4 +16,4 @@ if(isset($_GET["search_query"]) && trim($_GET["search_query"]) != "") {
 }
 
 $categories = $db->query($sql_query, $params)->fetchAll(PDO::FETCH_ASSOC);
-require "./views/categories.view.php";
+require "./views/components/categories/categories.view.php";
