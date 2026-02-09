@@ -11,4 +11,7 @@ return [
     "/pdoDarbs/create-cat"=>"controllers/categories/create.php",
     "/pdoDarbs/editt-cat"=>"controllers/categories/edit.php",
     "/pdoDarbs/delete-cat"=>"controllers/categories/delete.php",
+    "/pdoDarbs/comments/create" => "controllers/comments/create.php",
+    "/pdoDarbs/comments/edit" => "controllers/comments/edit.php",
+    "/pdoDarbs/comments/delete" => "controllers/comments/delete.php",
 ];

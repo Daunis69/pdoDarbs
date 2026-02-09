@@ -22,4 +22,4 @@
 <?php } ?>
 
 <?php $content = ob_get_clean(); ?>
-<?php require "./views/layout.php"; ?>
+<?php require "./views/layout.php"; ?>  

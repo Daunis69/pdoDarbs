@@ -16,5 +16,9 @@ if (!$post) {
 }
 
 
+// Fetch comments for this post (table name 'coments' per migration.sql)
+$sql = "SELECT * FROM coments WHERE postid = :postid ORDER BY postdate DESC";
+$params = ["postid" => $post["id"]];
+$comments = $db->query($sql, $params)->fetchAll();
 
 require "views/components/posts/show.view.php";
