@@ -3,6 +3,8 @@
 require_once "functions.php";
 require_once "Database.php";
 $config = require "config.php";
+$pageTitle = "Emuārs - kategorijas";
+$customStyles = "story.css";
 
 $db = new Database($config["database"]);
 $sql_query = "SELECT * FROM categories";
@@ -14,4 +16,4 @@ if(isset($_GET["search_query"]) && trim($_GET["search_query"]) != "") {
 }
 
 $categories = $db->query($sql_query, $params)->fetchAll(PDO::FETCH_ASSOC);
-require "./views/categories.view.php";
+require "./views/components/categories/categories.view.php";
