@@ -16,11 +16,11 @@ $id = (int) $_POST['id'];
 $countRow = $db->query("SELECT COUNT(*) AS cnt FROM posts WHERE category_id = :id", ['id' => $id])->fetch();
 if ($countRow && $countRow['cnt'] > 0) {
     // Redirect back to categories list with an error message
-    header('Location: /pdoDarbs/categories?error=cannot_delete_category_in_use');
+    header('Location: /categories?error=cannot_delete_category_in_use');
     exit;
 }
 
-$db->query("DELETE FROM categories WHERE id = :id", ['id' => $id]);
+    $db->query("DELETE FROM categories WHERE id = :id", ['id' => $id]);
 
-header('Location: /pdoDarbs/categories?success=category_deleted');
+    header('Location: /categories?success=category_deleted');
 exit;

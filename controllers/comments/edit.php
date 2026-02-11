@@ -5,12 +5,12 @@ require __DIR__ . "/../../Validator.php";
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $id = $_GET['id'] ?? null;
     if (!$id || !is_numeric($id)) {
-        header("Location: /pdoDarbs/");
+        header("Location: /");
         exit();
     }
     $comment = $db->query("SELECT * FROM coments WHERE id = :id", ['id' => $id])->fetch();
     if (!$comment) {
-        header("Location: /pdoDarbs/");
+        header("Location: /");
         exit();
     }
     require __DIR__ . '/../../views/components/comments/edit.view.php';
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $author = trim((string)($_POST['author'] ?? ''));
 
     if (!$id) {
-        header("Location: /pdoDarbs/");
+        header("Location: /");
         exit();
     }
 
@@ -52,6 +52,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $post = $db->query("SELECT postid FROM coments WHERE id = :id", ['id' => $id])->fetch();
     $postid = $post ? $post['postid'] : null;
-    header("Location: /pdoDarbs/show?id=" . ($postid ?? ''));
+    header("Location: /show?id=" . ($postid ?? ''));
     exit();
 }

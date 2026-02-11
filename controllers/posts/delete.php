@@ -14,5 +14,5 @@ $id = (int) $_POST['id'];
 
 $db->query("DELETE FROM posts WHERE id = :id", ['id' => $id]);
 
-header('Location: /pdoDarbs/');
+header('Location: /');
 exit;

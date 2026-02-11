@@ -1,30 +1,30 @@
 <?php
 
-if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: /pdoDarbs/");
-    exit();
-}
+    require "Validator.php";
 
-$postid = $_POST['postid'] ?? null;
-$coment = trim((string)($_POST['coment'] ?? ''));
-$author = trim((string)($_POST['author'] ?? ''));
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $errors=[];
+           if (!Validator::string($_POST["coment"], min: 1, max: 500)) { 
+                $errors["coment"] = "Saturam jābūt ievadītam, bet ne garākam par 500 rakstzīmēm";
+            }
+           
+           if (!isset($_POST["postid"]) || !is_numeric($_POST["postid"])) {
+                $errors["postid"] = "Lūdzu, norādiet ierakstu";
+            }
 
-if (!$postid) {
-    header("Location: /pdoDarbs/");
-    exit();
-}
-try {
-    $db->query(
-        "INSERT INTO coments (coment, postdate, postid, author) VALUES (:coment, NOW(), :postid, :author)",
-        ['coment' => $coment, 'postid' => (int)$postid, 'author' => $author]
-    );
-} catch (PDOException $e) {
-    $full = $author !== '' ? $author . ' — ' . $coment : $coment;
-    $db->query(
-        "INSERT INTO coments (coment, postdate, postid) VALUES (:coment, NOW(), :postid)",
-        ['coment' => $full, 'postid' => (int)$postid]
-    );
-}
+             if (empty($errors)) {
+            $sql = "INSERT INTO coments (coment, postdate, postid, author) VALUES (:coment, NOW(), :postid, :author)";
+            $params = [
+              "coment" => $_POST["coment"],
+              "postid" => (int)$_POST["postid"],
+              "author" => $_POST["author"] ?? ""
+            ];
+            $db->query($sql, $params);
 
-header("Location: /pdoDarbs/show?id=" . (int)$postid);
-exit();
+           header("Location: /");
+            exit();
+             }
+        }
+
+
+require "./views/components/comments/create.view.php";

@@ -11,7 +11,7 @@
     </ul>
 <?php endif; ?>
 
-<form action="/pdoDarbs/comments/edit" method="POST">
+<form action="/comments/edit" method="POST">
     <input type="hidden" name="id" value="<?= htmlspecialchars($comment['id']) ?>">
     <div class="form-group">
         <label>Autors:</label>
@@ -23,7 +23,7 @@
     </div>
     <div class="form-actions">
         <button type="submit">Saglabāt</button>
-        <a href="/pdoDarbs/show?id=<?= htmlspecialchars($comment['postid']) ?>">Atpakaļ</a>
+        <a href="/show?id=<?= htmlspecialchars($comment['postid']) ?>">Atpakaļ</a>
     </div>
 </form>
 

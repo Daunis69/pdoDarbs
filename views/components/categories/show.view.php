@@ -7,7 +7,7 @@
 
 <?php require "views/components/footer.php"; ?>
 
-<form action="/pdoDarbs/delete-cat" method="POST">
+<form action="/delete-cat" method="POST">
     <input type="hidden" name="id" value="<?= $category['id'] ?>">
 
     <button type="submit">

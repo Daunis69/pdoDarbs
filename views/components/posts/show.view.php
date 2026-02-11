@@ -9,7 +9,7 @@
 
 <div class="inline-actions">
     <a href="editt?id=<?= $post["id"] ?>">Rediget ierakstu</a>
-    <form action="/pdoDarbs/delete" method="POST">
+    <form action="/delete" method="POST">
         <input type="hidden" name="id" value="<?= $post['id'] ?>">
         <button type="submit">Dzēst ierakstu</button>
     </form>
@@ -31,8 +31,8 @@
                 <?php endif; ?>
 
                 <div class="comment-actions inline-actions">
-                    <a href="/pdoDarbs/comments/edit?id=<?= $c['id'] ?>">Rediģēt</a>
-                    <form action="/pdoDarbs/comments/delete" method="POST">
+                    <a href="/comments/edit?id=<?= $c['id'] ?>">Rediģēt</a>
+                    <form action="/comments/delete" method="POST">
                         <input type="hidden" name="id" value="<?= $c['id'] ?>">
                         <button type="submit">Dzēst</button>
                     </form>
@@ -44,7 +44,7 @@
     <?php endif; ?>
 
     <h3>Izveidot komentāru</h3>
-    <form action="/pdoDarbs/comments/create" method="POST">
+    <form action="/comments/create" method="POST">
         <input type="hidden" name="postid" value="<?= $post['id'] ?>">
         <div class="form-group">
             <label>Autors:</label>

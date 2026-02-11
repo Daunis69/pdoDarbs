@@ -1,13 +1,13 @@
 <?php
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header("Location: /pdoDarbs/");
+    header("Location: /");
     exit();
 }
 
 $id = $_POST['id'] ?? null;
 if (!$id) {
-    header("Location: /pdoDarbs/");
+    header("Location: /");
     exit();
 }
 
@@ -15,8 +15,8 @@ $post = $db->query("SELECT postid FROM coments WHERE id = :id", ['id' => $id])->
 $db->query("DELETE FROM coments WHERE id = :id", ['id' => $id]);
 
 if (!empty($post['postid'])) {
-    header("Location: /pdoDarbs/show?id=" . (int)$post['postid']);
+    header("Location: /show?id=" . (int)$post['postid']);
 } else {
-    header("Location: /pdoDarbs/");
+    header("Location: /");
 }
 exit();

@@ -20,7 +20,7 @@
             ];
             $db->query($sql, $params);
 
-           header("Location: /pdoDarbs/");
+           header("Location: /");
             exit();
              }
         }
