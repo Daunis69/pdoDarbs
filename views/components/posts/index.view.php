@@ -1,7 +1,7 @@
 <?php require "views/components/header.php"; ?>
 <?php require "views/components/navbar.php"; ?>
 
-<h1>Blo222s</h1>
+<h1>Blo22b2s</h1>
 <form method='get'>
     <input name='search_query' value='<?= $_GET["search_query"] ?? "" ?>' />
     <button>Meklēt</button>
